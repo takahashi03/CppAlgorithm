@@ -1,28 +1,53 @@
 #include <iostream>
+#include <vector>
 #include <stdio.h>
+#include <time.h>
 
 // 線形探索
 void Linear_Search1(int searchVelue)
 {
-	// データ100個
+	// 検索用
 	int data[100];
+	// 乱数用
+	std::vector<int> rdata(100, 0);
+	// 結果
 	int result;
 
-	// データに数値を入れる
+	// 乱数用データに数値を入れる
 	for (int i = 0; i < 100; i++)
 	{
-		data[i] = i;
+		rdata[i] = i;
+	}
+
+	// 検索用データに乱数を入れる
+
+	int i = 0;
+	while (rdata.size() > 0)
+	{
+		// 乱数
+		srand(time(NULL));
+		int r = rand() % (rdata.size());
+
+		data[i] = rdata[r];
+
+		rdata.erase(rdata.begin() + r);
+		i++;
+	}
+
+	// データ順の表示
+	std::cout << "データ順" << std::endl;
+	for (i = 0; i < sizeof(data) / sizeof(int); i++)
+	{
+		std::cout << i + 1 << " : " << data[i] << std::endl;
 	}
 
 	// 配列の先頭から順に調べる
-	for (int i = 0; i < sizeof(data) / sizeof(int); i++)
+	for (i = 0; i < sizeof(data) / sizeof(int); i++)
 	{
-		std::cout << data[i] << std::endl;
-
 		if (searchVelue == data[i])
 		{
 			result = data[i];
-			std::cout << result << "を発見しました。" << std::endl;
+			std::cout << i + 1 << "番目に" << result << "を発見しました。" << std::endl;
 			break;
 		}
 		else if (i >= sizeof(data) / sizeof(int) - 1)
