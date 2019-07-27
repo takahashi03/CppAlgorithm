@@ -1,6 +1,7 @@
 #include <iostream>
 
 // ‚Q•ª’Tõ
+// ‚Q•ª’Tõ‚Í”z—ñ‚ª®—ñ‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ð—˜—p‚µŒø—¦‚æ‚­’Tõ‚·‚é‚±‚Æ‚ª‚Å‚«‚é
 void Binary_Search1(int searchVelue)
 {
 	// ƒf[ƒ^100ŒÂ
@@ -33,7 +34,7 @@ void Binary_Search1(int searchVelue)
 
 			if (mid >= sizeof(data) / sizeof(int) - 1)
 			{
-				std::cout << sizeof(data) / sizeof(int) << "‚æ‚è‘å‚«‚¢‚½‚ßŒ©‚Â‚©‚è‚Ü‚¹‚ñ‚Å‚µ‚½" << std::endl;
+				std::cout << sizeof(data) / sizeof(int)-1 << "‚æ‚è‘å‚«‚¢‚½‚ßŒ©‚Â‚©‚è‚Ü‚¹‚ñ‚Å‚µ‚½" << std::endl;
 				break;
 			}
 		}
@@ -57,12 +58,12 @@ int main(void)
 	// ŒŸõ‚·‚é”’l
 	int	searchVelue = 0;
 
-	// ŒŸõ‚·‚é’l‚Ì“ü—Í
+	// ŒŸõ‚·‚é”’l‚Ì“ü—Í
 	std::cout << "’T‚·’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B" << std::endl;
 	std::cin >> searchVelue;
 	std::cout << searchVelue << "‚ð’T‚µ‚Ü‚·B" << std::endl;
 
-	//‚Q•ª’Tõ
+	// ‚Q•ª’Tõ
 	Binary_Search1(searchVelue);
 
 	return 0;
